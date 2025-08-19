@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michaelly Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts (Cursive vibe) -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1 class="logo">Michaelly’s Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#upload">Upload</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Welcome to my portfolio. I showcase photography, street shots, and personal projects. Take a look at my work below.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div id="images" class="gallery-grid"></div>
+  </section>
+
+  <section id="upload">
+    <h2>Upload Your Photo</h2>
+    <form id="uploadForm">
+      <input type="file" id="fileInput" accept="image/*">
+      <button type="submit">Upload</button>
+    </form>
+    <p id="uploadStatus"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Michaelly</p>
+  </footer>
+
+  <!-- Firebase App (the core SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+  <!-- Firebase Storage -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js"></script>
+  <!-- Your Firebase Config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const storage = firebase.storage();
+  </script>
+
+  <!-- Your Upload Logic -->
+  <script src="upload.js"></script>
+</body>
+</html>
